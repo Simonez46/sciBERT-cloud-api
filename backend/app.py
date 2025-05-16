@@ -22,3 +22,11 @@ def ask_scibert(question: Question):
         "message": "Input ricevuto e analizzato da SciBERT.",
         "embedding_preview": cls_embedding[:5]  # Mostra solo primi 5 valori per esempio
     }
+
+# 🔽 Aggiungi queste righe per Render:
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
